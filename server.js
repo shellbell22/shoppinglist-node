@@ -22,7 +22,7 @@ var Storage = {
     storageitems.map(function(item, index) {
       if (item.id == id) {
         item.name = name;
-        returnindex = index;
+        returnindex = item;
       }
     });
     return returnindex;
@@ -83,3 +83,6 @@ app.put('/items/:id', jsonParser, function(request, response) {
 });
 
 app.listen(process.env.PORT || 8080, process.env.IP);
+
+exports.app = app;
+exports.storage = storage;
